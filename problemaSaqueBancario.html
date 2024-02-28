@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Saque Bancário </title>
+</head>
+<body>
+    <form> 
+        <p> Saldo Atual <input type="text" id="saldo" readonly value="2000"> </p>
+        <p> Valor do Saque: <input type="text" id="valorSaque"> </p>
+        <button type="button" onclick="fazerSaque()"> Sacar </button>
+    </form> 
+      <script>
+         function fazerSaque(){
+            let saldo = document.getElementById("saldo").value;
+            let saque = document.getElementById("valorSaque").value;
+
+         if(saque <= saldo){
+               let operacao = saldo - saque;
+                  document.getElementById("saldo").value = operacao;
+               }else {
+                  alert("Saldo insuficiente!");
+               }
+               }
+      </script>
+</body>
+</html>
